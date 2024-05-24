@@ -58,7 +58,10 @@ Il sistema è composto da diversi componenti hardware e software, progettati per
 
 Ad ogni modo, il primo passaggio consiste nel collegare i vari dispositivi sulla breadboard, come mostrato nella figura che segue. [aggiungere figura dei collegamenti dal punto di vista elettronico].
 
-![Diagramma della breadboard]()
+<!--![Diagramma della breadboard](images/cablaggio_660Ohm.png)-->
+<p align="center">
+  <img src="images/cablaggio_660Ohm.png" width="800">
+</p>
 
 ## Organizzazione Repository 
 
