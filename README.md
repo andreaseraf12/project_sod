@@ -56,12 +56,58 @@ Il sistema è composto da diversi componenti hardware e software, progettati per
 
 ![Diagramma dell'architettura](images/schema_blocchi.png)
 
+Ad ogni modo, il primo passaggio consiste nel collegare i vari dispositivi sulla breadboard, come mostrato nella figura che segue. [aggiungere figura dei collegamenti dal punto di vista elettronico].
 
-
+![Diagramma della breadboard]()
 
 ## Organizzazione Repository 
 
-## Installazione locale e utilizzo 
+## Installazione locale 
+Il progetto è articolato in due principali sezioni: la prima riguarda l'ESP32, mentre la seconda si concentra sulla Raspberry Pi 4. Di seguito sono riportate le sezioni relative a ciascuna di queste macro-aree. 
+
+### ESP32
+#### Arduino IDE
+Installare l'[IDE di Arduino](https://www.arduino.cc/en/software) `v1.8.19` a seconda del sistema operativo utilizzato e   seguire le istruzioni nella finestra di installazione. 
+Una volta installato, aprire l'Arduino IDE e configurarlo al file di utilizzarlo con una board di tipo ESP32:
+
+- **Installare il driver per la comunicazione USB-seriale**
+
+   Se questo non viene installato automaticamente al collegamento del microcontrollore, è necessario scaricarlo dal sito di [Silicon Labs](https://www.silabs.com/interface/usb-bridges/classic/device.cp2102).
+
+- **Abilitare il supporto per la piattaforma EPS3**
+
+   Andare su `File > Preferenze`, nella sezione
+`"URL aggiuntivi per il Gestore delle Schede"`, e incollare il seguente URL:
+https://dl.espressif.com/dl/package_esp32_index.json
+NB. Se ci sono già altri URL, aggiungere una virgola alla fine e poi incollare il nuovo URL.
+
+- **Installazione del tipo di scheda ESP32**
+  
+    Andare su `Strumenti > Scheda > Gestore delle Schede`. Nella casella di ricerca digitare `esp32` e installare la versione `2.0.11` della scheda prodotta da *Espressif Systems*.
+
+- **Selezione della scheda ESP32**
+
+    Andare su `Strumenti > Scheda` e selezionare `ESP32 Dev Module`.
+
+- **Selezione della porta**
+
+    Collegare la scheda ESP32 al pc tramite un cavo USB. Andare su `Strumenti > Porta` e selezionare la porta corrispondente alla scheda (es. `COM3` su *Windows* o `/dev/ttyUSB0` su *Linux*.
+
+- **Caricamento del codice**
+
+    Scrivere o aprire uno sketch per ESP32 e cliccare su `Carica`. Se non funziona al primo tentativo, premere il pulsante `Boot` sul dispositivo ESP32 durante il caricamento.
+
+Per utilizzare correttamente il progetto con l'ESP32, è necessario installare librerie specifiche nell'ambiente di sviluppo Arduino IDE con le rispettive versioni:
+
+ - **RTClib.h**                       `v2.1.3`
+ - **Adafruit_BMP280.h**       `v2.6.8`
+ - **Adafruit_GFX.h**          `v1.11.9` 
+ - **Adafruit_SSD1306.h**  `v2.5.9`
+
+
+### RaspBerry Pi 4
+
+## Utilizzo
 
 ## Autori
 
