@@ -91,7 +91,7 @@ NB. Se ci sono già altri URL, aggiungere una virgola alla fine e poi incollare 
 
 - **Selezione della porta**
 
-    Collegare la scheda ESP32 al pc tramite un cavo USB. Andare su `Strumenti > Porta` e selezionare la porta corrispondente alla scheda (es. `COM3` su *Windows* o `/dev/ttyUSB0` su *Linux*.
+    Collegare la scheda ESP32 al pc tramite un cavo USB. Andare su `Strumenti > Porta` e selezionare la porta corrispondente alla scheda (es. `COM3` su *Windows* o `/dev/ttyUSB0` su *Linux*).
 
 - **Caricamento del codice**
 
@@ -106,6 +106,27 @@ Per utilizzare correttamente il progetto con l'ESP32, è necessario installare l
 
 
 ### RaspBerry Pi 4
+#### Installazione di L.A.M.P e librerie necessarie 
+
+##### LINUX
+Per installare il sistema operativo sulla Raspberry Pi scaricare [Raspberry Pi Imager](https://www.raspberrypi.com/software/). Terminata l'installazione, dalla schermata iniziale del tool selezionare il modello specifico di Raspberry Pi, il sistema operativo e la scheda SD per la memorizzazione dello stesso sistema operativo. Al termine di ciò, viene aperta una nuova finestra di dialogo per la configurazione personalizzata delle seguenti impostazioni: 
+
+- **Nome Host** per identificare facilmente il dispositivo nella rete
+- **SSH** per consentire connessioni sicure e crittografate al dispositivo
+- **Wi-Fi** per garantire l'accesso a Internet inserire l'SSID e la password della rete wireless
+
+Al termine del processo inserire la microSD nella Raspberry Pi e connettersi a quest'ultima utilizzando il comando: 
+
+```bash
+ssh [username]@[IP_address]
+```
+
+Prima di procedere con l'installazione dei successivi pacchetti necessari è buona pratica aggiornare l'elenco dei pacchetti, risolvere le dipendenze e migliorare la sicurezza del sistema, tramite il comando:
+
+```bash
+ sudo apt update && sudo apt upgrade
+```
+
 
 ## Utilizzo
 
