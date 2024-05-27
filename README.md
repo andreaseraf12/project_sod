@@ -130,6 +130,108 @@ Prima di procedere con l'installazione dei successivi pacchetti necessari è buo
  sudo apt update && sudo apt upgrade
 ```
 
+##### APACHE2
+
+Installare Apache2:
+```bash
+    sudo apt install apache2==2.4.57-2
+```
+Per la verifica dello stato e il riavvio del servizio: 
+```bash
+    sudo systemctl status apache2
+    sudo systemctl restart apache2
+```
+##### MARIADB
+
+Installare MariaDB:
+```bash
+sudo apt install mariadb-server==1.10.11.4-1
+```
+Riavviare il servizio MariaDB al fine di verificare che tutto è installato correttamente:
+```bash
+    sudo systemctl restart mariadb.service
+```
+
+Per proteggere l'installazione è consigliabile: 
+```bash
+    sudo mysql_secure_installation
+```
+Viene visualizzata una finestra di dialogo: inserire la password corrente per l'utente root e impostare una nuova password. Al termine del processo di configurazione, verrà visualizzato il messaggio *Grazie per aver utilizzato MariaDB*.
+
+Effettuare l'accesso a MariaDB: 
+```bash
+sudo mysql --user=root --password  
+```
+
+##### MARIADB - Creazione del database 
+Creare il database e definire la tabella con i campi opportuni:
+```bash
+MariaDB [mysql]> create database SensorData;
+MariaDB [mysql]> use SensorData;
+MariaDB [SensorData]> CREATE TABLE misure(
+-> id INT NOT NULL AUTO_INCREMENT,
+-> Data DATETIME,
+-> Temperatura FLOAT,
+-> Pressione FLOAT,
+-> RPM INT,
+-> PRIMARY KEY (id)
+-> );
+```
+
+##### PHP
+Installare PHP:
+```bash
+    sudo apt install php==2:8.2+93
+    sudo apt install phpmyadmin==4:5.2.1+dfsg-1
+```
+
+Durante l'installazione di PHPMyadmin verrà visualizzata una finestra di dialogo in cui verrà chiesto di confermare l'utilizzo di *apache2* e *dbconfig-common* per la configurazione del database. Successivamente, verrà richiesta la configurazione di una password per l'accesso a MySQL tramite PHPMyAdmin.
+
+> Qualora si riscontrassero errori durante l'accesso a PHPMyAdmin, potrebbe essere necessario creare un nuovo utente. Questi comandi creeranno un nuovo utente con nome *admin* e password *password*. Le credenziali NON devono necessariamente coincidere con quanto riportato, ma possono essere liberamente selezionate dall'utente. Qui vengono fornite delle credenziali esemplificative, offrendo all'utente la flessibilità di scegliere le proprie informazioni di accesso.
+> 
+```bash
+        sudo mysql 
+        > create user admin@localhost identified by 'your_password';
+        > grant all privileges on *.* to admin@localhost;
+        > FLUSH PRIVILEGES;
+        > exit;
+```
+
+##### Creazione ambiente virtuale
+
+Innanzitutto installare Python3 e pip:
+```bash
+sudo apt install python3
+sudo apt install python3-pip
+```
+
+Per creare ed effettuare l'accesso ad un ambiente virtuale eseguire le istruzioni direttamente nel terminale della RaspBerry: 
+
+- Creazione ambiente virtuale. Questo comando deve essere eseguito solo la prima volta; Nel nostro caso è stato creato un ambiente virtuale chiamato *progett_sod* al cui interno viene installata l'ultima versione del linguaggio Python (v. 3.11.2) e del gestore dei pacchetti pip (v. 23.0.1)
+- 
+```bash
+        python3 -m venv progett_sod python=3.11.2
+```
+        
+- Attivazione ambiente virtuale. Questo comando va eseguito ogni volta che si vuole usufruire dei pacchetti installati all'interno di un determinato ambiente virtuale.
+- 
+```bash
+        source progett_sod/bin/activate
+        \end{lstlisting}
+```
+
+Successivamente alla prima installazione installare tutte le librerie necessarie alla comunicazione su seriale, alla creazione e salvataggio dei dati su database e al funzionamento del chatbot. All'interno del sottostante listato vengono riportati i principali pacchetti utilizzati ai quali, per ciascuno di essi, sono state installate dal gestore \texttt{pip} le loro dipendenze. In Appendice \ref{requirements} viene riportata la lista completa di tutti i pacchetti.
+
+\begin{lstlisting}
+pip install pyserial == 3.5
+pip install ntplib == 0.4.0
+sudo apt-get install libmariadb-dev == 1:10.11.4-1 deb12u1 
+pip install mariadb == 1.1.9
+pip install numpy == 1.26.3
+pip install matplotlib == 3.8.1
+pip install Flask == 3.0.1
+pip install python-telegram-bot == 20.7
+\end{lstlisting}
 
 ## Utilizzo
 
