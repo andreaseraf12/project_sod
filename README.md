@@ -188,14 +188,13 @@ Installare PHP:
 Durante l'installazione di PHPMyadmin verrà visualizzata una finestra di dialogo in cui verrà chiesto di confermare l'utilizzo di *apache2* e *dbconfig-common* per la configurazione del database. Successivamente, verrà richiesta la configurazione di una password per l'accesso a MySQL tramite PHPMyAdmin.
 
 > Qualora si riscontrassero errori durante l'accesso a PHPMyAdmin, potrebbe essere necessario creare un nuovo utente. Questi comandi creeranno un nuovo utente con nome *admin* e password *password*. Le credenziali NON devono necessariamente coincidere con quanto riportato, ma possono essere liberamente selezionate dall'utente. Qui vengono fornite delle credenziali esemplificative, offrendo all'utente la flessibilità di scegliere le proprie informazioni di accesso.
-> 
-```bash
-        sudo mysql 
-        > create user admin@localhost identified by 'your_password';
-        > grant all privileges on *.* to admin@localhost;
-        > FLUSH PRIVILEGES;
-        > exit;
-```
+>```bash
+>        sudo mysql 
+>        > create user admin@localhost identified by 'your_password';
+>        > grant all privileges on *.* to admin@localhost;
+>        > FLUSH PRIVILEGES;
+>       > exit;
+>```
 
 ##### Creazione ambiente virtuale
 
