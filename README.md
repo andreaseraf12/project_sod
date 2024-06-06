@@ -196,7 +196,7 @@ Durante l'installazione di PHPMyadmin verrà visualizzata una finestra di dialog
 >       > exit;
 >```
 
-##### Creazione ambiente virtuale
+##### Creazione ambiente virtuale - DA TERMINARE 
 
 Innanzitutto installare Python3 e pip:
 ```bash
@@ -232,7 +232,7 @@ pip install Flask == 3.0.1
 pip install python-telegram-bot == 20.7
 \end{lstlisting}
 
-## Utilizzo
+## Demoni - DA FARE
 
 ## Autori
 
