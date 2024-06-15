@@ -196,9 +196,9 @@ Durante l'installazione di PHPMyadmin verrà visualizzata una finestra di dialog
 >       > exit;
 >```
 
-##### Creazione ambiente virtuale - DA TERMINARE 
+##### Creazione ambiente virtuale 
 
-Innanzitutto installare Python3 e pip:
+Per prima cosa installare Python3 e pip:
 ```bash
 sudo apt install python3
 sudo apt install python3-pip
@@ -206,7 +206,7 @@ sudo apt install python3-pip
 
 Per creare ed effettuare l'accesso ad un ambiente virtuale eseguire le istruzioni direttamente nel terminale della RaspBerry: 
 
-- Creazione ambiente virtuale. Questo comando deve essere eseguito solo la prima volta; Nel nostro caso è stato creato un ambiente virtuale chiamato *progett_sod* al cui interno viene installata l'ultima versione del linguaggio Python (v. 3.11.2) e del gestore dei pacchetti pip (v. 23.0.1)
+- Creazione ambiente virtuale. Questo comando deve essere eseguito solo la prima volta; nel nostro caso è stato creato un ambiente virtuale chiamato *progett_sod* al cui interno viene installata l'ultima versione del linguaggio Python (v. 3.11.2) e del gestore dei pacchetti pip (v. 23.0.1)
 - 
 ```bash
         python3 -m venv progett_sod python=3.11.2
@@ -216,21 +216,14 @@ Per creare ed effettuare l'accesso ad un ambiente virtuale eseguire le istruzion
 - 
 ```bash
         source progett_sod/bin/activate
-        \end{lstlisting}
 ```
 
-Successivamente alla prima installazione installare tutte le librerie necessarie alla comunicazione su seriale, alla creazione e salvataggio dei dati su database e al funzionamento del chatbot. All'interno del sottostante listato vengono riportati i principali pacchetti utilizzati ai quali, per ciascuno di essi, sono state installate dal gestore \texttt{pip} le loro dipendenze. In Appendice \ref{requirements} viene riportata la lista completa di tutti i pacchetti.
+Successivamente per installare tutte le dipendenze necessarie per il progetto, assicurati di avere `pip` installato. Poi, esegui il seguente comando nel terminale all'interno della directory principale del repository:
 
-\begin{lstlisting}
-pip install pyserial == 3.5
-pip install ntplib == 0.4.0
-sudo apt-get install libmariadb-dev == 1:10.11.4-1 deb12u1 
-pip install mariadb == 1.1.9
-pip install numpy == 1.26.3
-pip install matplotlib == 3.8.1
-pip install Flask == 3.0.1
-pip install python-telegram-bot == 20.7
-\end{lstlisting}
+```bash
+pip install -r RPI/requirements.txt
+```
+
 
 ## Demoni - DA FARE
 
