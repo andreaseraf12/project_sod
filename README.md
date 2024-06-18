@@ -7,12 +7,10 @@ Progetto didattico del corso di Sistemi Operativi Dedicati di laurea magistrale 
   
   - [Descrizione del Progetto](#descrizione-del-progetto)
     - [Strumenti Utilizzati](#strumenti-utilizzati)
-       - [Componenti Software](#componenti-software)
-       - [Componenti Hardware](#componenti-hardware)
-       - [Linguaggi di Programmazione](#linguaggi-di-programmazione)
     - [Funzionamento](#funzionamento)
   - [Struttura Repository](#struttura-repository)
   - [Installazione Locale](#installazione-locale)
+  - [Demoni](#demoni)
   - [Autori](#autori)
 </details>
 
@@ -267,7 +265,74 @@ pip install -r RPI/requirements.txt
 ```
 
 
-## Demoni - DA FARE
+## Demoni 
+Questa sezione descrive la configurazione dei daemon per eseguire gli script Python associati al progetto. All'interno della cartella `service_timer_files` sono contenuti i file `.timer` e `.service` da dover salvare all'interno del percorso `/lib/system/systemd/`; i file presenti all'interno della cartella `bash_files` includono i file `.sh` da dover salvare nella stessa directory in cui sono presenti i rispettivi file `.py`.
+
+### Servizi Implementati
+
+1. **sync_service.service**
+    - **Descrizione:** Sincronizzazione RTC tramite protocollo NTP.
+    - **File di Supporto:** `service_sync.sh`
+    - **Script Eseguito:** `sync_timer.py`
+    - **Timer:** `sync_service.timer`
+
+2. **db_service.service**
+    - **Descrizione:** Gestione del database.
+    - **File di Supporto:** `service_db.sh`
+    - **Script Eseguito:** `database.py`
+
+3. **app_service.service**
+    - **Descrizione:** Gestione della web app.
+    - **File di Supporto:** `service_webapp.sh`
+    - **Script Eseguito:** `app.py`
+
+4. **bot_service.service**
+    - **Descrizione:** Gestione del chatbot.
+    - **File di Supporto:** `service_bot.sh`
+    - **Script Eseguito:** `chatbot.py`
+
+### Abilitazione e Avvio dei Servizi
+
+#### Abilitazione del Timer
+
+```bash
+systemctl enable sync_service.timer
+```
+
+#### Verifica dello Stato
+
+```bash
+systemctl status sync_service.timer
+systemctl status sync_service.service
+```
+
+#### Abilitazione dei Servizi Database, Web app e Chatbot
+
+```bash
+systemctl enable db_service.service
+systemctl enable webapp_service.service
+systemctl enable bot_service.service
+```
+
+#### Verifica dello Stato
+
+```bash
+systemctl status db_service.service
+systemctl status webapp_service.service
+systemctl status bot_service.service
+```
+
+#### Reboot del Sistema
+
+```bash
+sudo reboot
+```
+
+##### Note
+
+- Assicurarsi che gli script bash siano eseguibili con `chmod +x`.
+- Dopo il reboot, tutti i servizi verranno avviati automaticamente secondo le dipendenze configurate.
+
 
 ## Autori
 
