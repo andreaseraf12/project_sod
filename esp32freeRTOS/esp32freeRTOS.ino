@@ -10,7 +10,7 @@
 #define PIN_PWM 17
 
 #define PIN_TACHO 16
-#define SOGLIA 21
+#define SOGLIA 24
 #define PIN_COUNTDOWNINT 0
 
 //Inizializzazione variabili globali utili per l'RPM
