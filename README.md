@@ -62,7 +62,7 @@ Ad ogni modo, il primo passaggio consiste nel collegare i vari dispositivi sulla
   <img src="images/cablaggio_660Ohm.png" width="800">
 </p>
 
-## Organizzazione Repository 
+## Struttura Repository 
 ```bash
 ├─ RPI
     ├─ Flask
@@ -107,21 +107,6 @@ Ad ogni modo, il primo passaggio consiste nel collegare i vari dispositivi sulla
 └─ Traccia_Progetto.pdf
 ```
 
-├─ find_neighbour_dist.py  # Script to find optimal #neighbours within neighbour search operations
-├─ forward_scripts         # Script that runs a forward pass on possibly non annotated data
-├─ outputs                 # All outputs from your runs sorted by date
-├─ scripts                 # Some scripts to help manage the project
-├─ torch_points3d
-    ├─ core                # Core components
-    ├─ datasets            # All code related to datasets
-    ├─ metrics             # All metrics and trackers
-    ├─ models              # All models
-    ├─ modules             # Basic modules that can be used in a modular way
-    ├─ utils               # Various utils
-    └─ visualization       # Visualization
-├─ test
-└─ train.py                # Main script to launch a training
-```
 ## Installazione locale 
 Il progetto è articolato in due principali sezioni: la prima riguarda l'ESP32, mentre la seconda si concentra sulla Raspberry Pi 4. Di seguito sono riportate le sezioni relative a ciascuna di queste macro-aree. 
 
