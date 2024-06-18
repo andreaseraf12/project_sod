@@ -13,7 +13,6 @@ Progetto didattico del corso di Sistemi Operativi Dedicati di laurea magistrale 
     - [Funzionamento](#funzionamento)
   - [Struttura Repository](#struttura-repository)
   - [Installazione Locale](#installazione-locale)
-  - [Utilizzo](#utilizzo)
   - [Autori](#autori)
 </details>
 
@@ -56,7 +55,7 @@ Il sistema è composto da diversi componenti hardware e software, progettati per
 
 ![Diagramma dell'architettura](images/schema_blocchi.png)
 
-Ad ogni modo, il primo passaggio consiste nel collegare i vari dispositivi sulla breadboard, come mostrato nella figura che segue. [aggiungere figura dei collegamenti dal punto di vista elettronico].
+Ad ogni modo, il primo passaggio consiste nel collegare i vari dispositivi sulla breadboard, come mostrato nella figura che segue. 
 
 <!--![Diagramma della breadboard](images/cablaggio_660Ohm.png)-->
 <p align="center">
@@ -64,7 +63,65 @@ Ad ogni modo, il primo passaggio consiste nel collegare i vari dispositivi sulla
 </p>
 
 ## Organizzazione Repository 
+```bash
+├─ RPI
+    ├─ Flask
+         ├─ static          
+              └─ style.css            
+         ├─ templates
+              └─ index.html              
+         └─ app.py             
+    ├─ bash_files           
+         ├─ service_bot.sh 
+         ├─ service_db.sh            
+         ├─ service_sync.sh            
+         └─ service_webapp.sh        
+    ├─ service_timer_files
+         ├─ bot_service.service           
+         ├─ db_service.service
+         ├─ sync_service.service            
+         ├─ sync_service.timer             
+         └─ webapp_service.service            
+    ├─ sync_timer.py              
+    ├─ database.py             
+    ├─ chatbot.py               
+    └─ requirements.txt       
+├─ datasheet           
+    ├─ ESP32
+         ├─ ESP-32 Dev Kit C V2_ITA.pdf             
+         ├─ ESP32 datasheet.txt              
+         └─ esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf                
+    ├─ bmp280            
+         └─ BMP280.pdf               
+    ├─ rtc           
+         ├─ AN11247_pcf8523.pdf               
+         └─ adafruit-pcf8523-real-time-clock.pdf            
+    └─ link_datasheet_utili.txt       
+├─ esp32freeRTOS             
+    └─ esp32freeRTOS.ino     
+├─ images              
+    ├─ cablaggio_660Ohm.png             
+    ├─ logounivpm.png               
+    └─ schema_blocchi.png   
+├─ README.md                    
+└─ Traccia_Progetto.pdf
+```
 
+├─ find_neighbour_dist.py  # Script to find optimal #neighbours within neighbour search operations
+├─ forward_scripts         # Script that runs a forward pass on possibly non annotated data
+├─ outputs                 # All outputs from your runs sorted by date
+├─ scripts                 # Some scripts to help manage the project
+├─ torch_points3d
+    ├─ core                # Core components
+    ├─ datasets            # All code related to datasets
+    ├─ metrics             # All metrics and trackers
+    ├─ models              # All models
+    ├─ modules             # Basic modules that can be used in a modular way
+    ├─ utils               # Various utils
+    └─ visualization       # Visualization
+├─ test
+└─ train.py                # Main script to launch a training
+```
 ## Installazione locale 
 Il progetto è articolato in due principali sezioni: la prima riguarda l'ESP32, mentre la seconda si concentra sulla Raspberry Pi 4. Di seguito sono riportate le sezioni relative a ciascuna di queste macro-aree. 
 
