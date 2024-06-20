@@ -195,7 +195,7 @@ void Task_Sensors(void *pvParameters){
     message.pressione = bmp.readPressure()*9.8692*pow(10,-6); 
     //map e constrain hanno l'obiettivo di rendere proporzionale la velocità della ventola all'aumentare 
     //della temperatura limitando il valore associato alla PWM in un range 0-255 
-    fanSpeed = map(message.temperatura, SOGLIA, 36, 0, 255); 
+    fanSpeed = map(message.temperatura, SOGLIA, 32, 0, 255); 
     ledcWrite(CANALE, constrain(fanSpeed, 0, 255)); 
 
     //conversione degli impulsi in RPM ad ogni secondo
