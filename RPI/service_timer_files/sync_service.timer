@@ -2,7 +2,7 @@
 Description = avvia il file sync_service.service ogni minuto
 
 [Timer]
-OnBootSec=30s
+OnBootSec=10s
 OnUnitActiveSec=1min
 Persistent=false
 
