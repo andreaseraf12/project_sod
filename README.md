@@ -9,7 +9,7 @@ Progetto didattico del corso di Sistemi Operativi Dedicati di laurea magistrale 
     - [Strumenti Utilizzati](#strumenti-utilizzati)
     - [Funzionamento](#funzionamento)
   - [Struttura Repository](#struttura-repository)
-  - [Installazione Locale](#installazione-locale)
+  - [Installazione delle componenti software](#installazione-delle-componenti-software)
   - [Demoni](#demoni)
   - [Autori](#autori)
 </details>
@@ -105,7 +105,7 @@ Ad ogni modo, il primo passaggio consiste nel collegare i vari dispositivi sulla
 └─ Traccia_Progetto.pdf
 ```
 
-## Installazione locale 
+## Installazione delle componenti software 
 Il progetto è articolato in due principali sezioni: la prima riguarda l'ESP32, mentre la seconda si concentra sulla Raspberry Pi 4. Di seguito sono riportate le sezioni relative a ciascuna di queste macro-aree. 
 
 ### ESP32
