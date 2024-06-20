@@ -31,8 +31,8 @@ def index():
     cur.execute("SELECT * FROM misure ORDER BY id DESC")
     data = cur.fetchall()
 
-    #Esecuzione della query SQL per selezionare tutte le righe nell'intervallo di 60 minuti
-    cur.execute("SELECT * FROM misure WHERE Data >= NOW() - INTERVAL 60 MINUTE AND Data < NOW()")
+    #Esecuzione della query SQL per selezionare tutte le righe nell'intervallo di 5 minuti
+    cur.execute("SELECT * FROM misure WHERE Data >= NOW() - INTERVAL 5 MINUTE AND Data < NOW()")
     data2 = cur.fetchall()
 
     conn.close()
