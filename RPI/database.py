@@ -55,7 +55,7 @@ try:
                 new_RPM = int(line[4])
 
                 #controllo per l'invio dell'alert
-                if new_Temp > 38:
+                if new_Temp > 33:
                         contatore= contatore+1
                         asyncio.run(chatbot.funz_alert(True, contatore))
                 else:
