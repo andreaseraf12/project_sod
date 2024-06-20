@@ -329,8 +329,8 @@ sudo reboot
 ```
 
 ##### Note
-
-- Assicurarsi che gli script bash siano eseguibili con `chmod +x`.
+- Assicurarsi che gli script `bash`, `.sh` e `.service` contengano la corretta posizione dei file all'interno del proprio sistema operativo;
+- Assicurarsi che gli script `bash` siano eseguibili con `chmod +x`;
 - Dopo il reboot, tutti i servizi verranno avviati automaticamente secondo le dipendenze configurate.
 
 
