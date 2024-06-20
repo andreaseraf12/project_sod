@@ -240,6 +240,7 @@ void Task_Sync(void* pvParameters) {
         if (msg_rx[0]== "sync" && msg_rx[1].toInt() >= 2024 && msg_rx[2].toInt() <= 12 && msg_rx[3].toInt()<=31 && msg_rx[4].toInt()<= 23 && msg_rx[5].toInt()<= 59 && msg_rx[6].toInt()<= 59 ) {
             rtc.adjust(DateTime(msg_rx[1].toInt(),msg_rx[2].toInt(),msg_rx[3].toInt(),msg_rx[4].toInt(),msg_rx[5].toInt(),msg_rx[6].toInt()));
             rtc.start();
+            Serial.println("M!#sync");
             vTaskDelay(pdMS_TO_TICKS(100));
           }
         }
