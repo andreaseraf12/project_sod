@@ -63,7 +63,8 @@ try:
 
                 #chiamata della funzione per il salvataggio dei dati nel db
                 add_measure(cur,new_Data,new_Temp,new_Pres,new_RPM)
-
+	else:
+		print(line) #stampa a video eventuali altri messaggi
 except KeyboardInterrupt:
     ser.close()
     print("Connessione al dispositivo ESP32 chiusa.")
