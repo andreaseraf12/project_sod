@@ -10,7 +10,7 @@
 #define PIN_PWM 17
 
 #define PIN_TACHO 16
-#define SOGLIA 24
+#define SOGLIA 28
 #define PIN_COUNTDOWNINT 0
 
 //Inizializzazione variabili globali utili per l'RPM
@@ -195,7 +195,7 @@ void Task_Sensors(void *pvParameters){
     message.pressione = bmp.readPressure()*9.8692*pow(10,-6); 
     //map e constrain hanno l'obiettivo di rendere proporzionale la velocità della ventola all'aumentare 
     //della temperatura limitando il valore associato alla PWM in un range 0-255 
-    fanSpeed = map(message.temperatura, SOGLIA, 28, 0, 255); 
+    fanSpeed = map(message.temperatura, SOGLIA, 36, 0, 255); 
     ledcWrite(CANALE, constrain(fanSpeed, 0, 255)); 
 
     //conversione degli impulsi in RPM ad ogni secondo
